@@ -55,7 +55,7 @@
 <p align="center">
     <img src="img/Portfolio_1_Logical_Graph.jpg" alt="SOC Automation Logical Diagram" width="800">
     <br>
-    <small>High-Level SOC Automation Logical Diagram</small>
+    <small>SOC Automation Logical Diagram</small>
 </p>
 
 <h2 id="-my-soc-lab-architecture">💻 My SOC LAB Architecture</h2>
