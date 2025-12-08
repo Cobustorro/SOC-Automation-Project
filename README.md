@@ -52,6 +52,12 @@
 
 <hr>
 
+<p align="center">
+    <img src="img/Portfolio_1_Logical_Graph.jpg" alt="SOC Automation Logical Diagram" width="800">
+    <br>
+    <small>High-Level SOC Automation Logical Diagram</small>
+</p>
+
 <h2 id="-my-soc-lab-architecture">💻 My SOC LAB Architecture</h2>
 <p>My entire lab uses <strong>VirtualBox</strong> for all VMs, creating a fully isolated, stable, and reproducible environment.</p>
 
@@ -89,6 +95,12 @@
 </tbody>
 </table>
 
+<p align="center">
+    <img src="img/Virtual Machine setup.png" alt="VirtualBox Setup for All Lab Components" width="800">
+    <br>
+    <small>VirtualBox Setup for All Lab Components</small>
+</p>
+
 <h3 id="the-cloud-bridge-cloudflare-tunnel">The Cloud Bridge: Cloudflare Tunnel</h3>
 <p>This is a critical security detail. Since <strong>Shuffle Cloud</strong> cannot reach my private network (<code>192.168.56.103</code>), the <strong>Cloudflare Tunnel</strong> agent was installed on TheHive VM. This agent creates an <strong>outbound encrypted tunnel</strong> to Cloudflare, making TheHive reachable by Shuffle via a public hostname (<code>https://thehive.mydomain.com/</code>), while keeping my firewall closed. I attempted hosting Shuffle via the virtual environment, however I quickly reached my host machine's memory limitations, therefore the tunnel solution was more reachable and logical to complete the project.</p> 
 
@@ -104,6 +116,12 @@
 <li><strong>Wazuh Alert:</strong> A custom rule (e.g., Rule ID 100002) triggers on the original file name/process command line, generating a high-severity alert.</li>
 <li><strong>Wazuh &rarr; Shuffle:</strong> Wazuh uses its integration framework to send the full, decoded alert JSON via <strong>Webhook</strong> to Shuffle Cloud.</li>
 </ul>
+
+<p align="center">
+    <img src="img/Wazuh Discovery Dashboard.png" alt="Wazuh Discovery Dashboard Showing Endpoint Telemetry" width="800">
+    <br>
+    <small>Wazuh Discovery Dashboard Showing Endpoint Telemetry</small>
+</p>
 
 <h3 id="shuffle-soar-playbook">Shuffle SOAR Playbook</h3>
 <p>The Shuffle workflow executes the following steps:</p>
@@ -139,8 +157,20 @@
 </tbody>
 </table>
 
+<p align="center">
+    <img src="img/TheHive Alert in Management.png" alt="The Final Alert in TheHive Management UI" width="800">
+    <br>
+    <small>The Final Alert in TheHive Management UI (Before Enrichment)</small>
+</p>
+
 <h3 id="key-solution-thehive-json-typing">Key Solution: TheHive JSON Typing</h3>
 <p>During development, TheHive frequently returned <code>Invalid json</code> or <code>BadRequest</code> errors. The solution was ensuring that <strong>severity</strong>, <strong>tlp</strong> (Traffic Light Protocol), and <strong>pap</strong> (Permissible Action Protocol) were passed as <strong>numeric integers</strong>, not strings, preventing common schema validation failures.</p>
+
+<p align="center">
+    <img src="img/Shuffle Automation Graph.png" alt="Complete End-to-End Shuffle Workflow Graph" width="800">
+    <br>
+    <small>Complete End-to-End Shuffle Workflow Graph</small>
+</p>
 
 <hr>
 
